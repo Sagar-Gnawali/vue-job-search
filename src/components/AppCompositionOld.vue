@@ -1,30 +1,18 @@
-<script>
+<script setup>
 import { ref } from 'vue'
-export default {
-    setup() {
-        const message = ref("This is Vue job search for hands on vue")
-        const name = ref('Sagar')
-        const status = ref('Inactive')
-        const tasks = ref(['Task 1', 'Task 2', 'Task 3'])
-        const link = ref('https://www.google.com')
-        function toogleStatus(e) {
-            console.log('e', status)
-            if (status.value.toLocaleLowerCase() === 'active') {
-                status.value = 'Inactive'
-            } else if (status.value.toLocaleLowerCase() === 'inactive') {
-                status.value = 'Active'
-            } else {
-                status.value = 'Unknown'
-            }
-        }
-        return {
-            message,
-            name,
-            status,
-            tasks,
-            link,
-            toogleStatus
-        }
+const message = ref("This is Vue job search for hands on vue")
+const name = ref('Sagar')
+const status = ref('Inactive')
+const tasks = ref(['Task 1', 'Task 2', 'Task 3'])
+const link = ref('https://www.google.com')
+function toogleStatus(e) {
+    console.log('e', status)
+    if (status.value.toLocaleLowerCase() === 'active') {
+        status.value = 'Inactive'
+    } else if (status.value.toLocaleLowerCase() === 'inactive') {
+        status.value = 'Active'
+    } else {
+        status.value = 'Unknown'
     }
 }
 </script>
