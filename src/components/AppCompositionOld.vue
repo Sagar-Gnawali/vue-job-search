@@ -5,6 +5,9 @@ const name = ref('Sagar')
 const status = ref('Inactive')
 const tasks = ref(['Task 1', 'Task 2', 'Task 3'])
 const link = ref('https://www.google.com')
+
+const newTask = ref('')
+
 function toogleStatus(e) {
     console.log('e', status)
     if (status.value.toLocaleLowerCase() === 'active') {
@@ -13,6 +16,12 @@ function toogleStatus(e) {
         status.value = 'Active'
     } else {
         status.value = 'Unknown'
+    }
+}
+const addTask = () => {
+    if (newTask.value.trim() !== '') {
+        tasks.value.push(newTask.value)
+        newTask.value = ''
     }
 }
 </script>
@@ -37,6 +46,14 @@ function toogleStatus(e) {
     </div>
 
     <button v-on:click='toogleStatus'>Toogle Status</button>
+<!-- For adding new taks using v-bind or binding  -->
+    <div>
+        <form @submit.prevent='addTask'>
+            <label for="new Task">Add New Task</label>
+            <input type='text' htmlfor='new Task' name='newTask' id='newTask' v-model='newTask'>
+            <button type='submit'>Add Task</button>
+        </form>
+    </div>
 </template>
 
 <style scoped>
