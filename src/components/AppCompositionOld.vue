@@ -2,18 +2,19 @@
 import { ref } from 'vue'
 export default {
     setup() {
-        const message = "This is Vue job search for hands on vue"
-        const name = 'Sagar'
-        const status = 'Inactive'
-        const tasks = ['Task 1', 'Task 2', 'Task 3']
-        const link = 'https://www.google.com'
-        function toogleStatus() {
-            if (status.toLocaleLowerCase() === 'active') {
-                status = 'Inactive'
-            } else if (status.toLocaleLowerCase() === 'inactive') {
-                status = 'Active'
+        const message = ref("This is Vue job search for hands on vue")
+        const name = ref('Sagar')
+        const status = ref('Inactive')
+        const tasks = ref(['Task 1', 'Task 2', 'Task 3'])
+        const link = ref('https://www.google.com')
+        function toogleStatus(e) {
+            console.log('e', status)
+            if (status.value.toLocaleLowerCase() === 'active') {
+                status.value = 'Inactive'
+            } else if (status.value.toLocaleLowerCase() === 'inactive') {
+                status.value = 'Active'
             } else {
-                status = 'Unknown'
+                status.value = 'Unknown'
             }
         }
         return {
