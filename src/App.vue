@@ -5,7 +5,8 @@ export default {
         return {
             message: "This is Vue job search for hands on vue",
             name:'Scot',
-            status:'Inactive'
+            status:'Inactive',
+            tasks:['Task 1','Task 2','Task 3']
         }
     }
 }
@@ -18,6 +19,13 @@ export default {
     <p v-if='status === "Active"'>You are logged in Active account</p>
     <p v-else-if='status==="Inactive"'>You are in Inactive account</p>
     <p v-else>You are in unknown account</p>
+
+    <div>
+        <h5>Mapping the taks using for</h5>
+        <ul>
+            <li v-for='tsks in tasks' :key='tsks'>{{tsks}}</li>
+        </ul>
+    </div>
 
 <!-- <h1>This is Vue job search for ha nds on vue</h1> -->
 <!-- <ListingJobs/> -->
