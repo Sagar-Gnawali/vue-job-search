@@ -27,9 +27,11 @@ export default {
             <li v-for='tsks in tasks' :key='tsks'>{{tsks}}</li>
         </ul>
     </div>
-    <a v-bind:href='link' target="_blank">Click here to visit Google old way</a>
+   <div>
+     <a v-bind:href='link' target="_blank">Click here to visit Google old way</a>
     <br>
-    <a :href='link' target="_blank">Click here to visit Google using new way</a>
+    <a :href='link' target="_blank" >Click here to visit Google using new way</a>
+   </div>
 
 
 <!-- <h1>This is Vue job search for ha nds on vue</h1> -->
