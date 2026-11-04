@@ -24,6 +24,10 @@ const addTask = () => {
         newTask.value = ''
     }
 }
+
+const deleteTask = (index) => {
+    tasks.value.splice(index, 1)
+}
 </script>
 
 <template>
@@ -36,7 +40,7 @@ const addTask = () => {
     <div>
         <h5>Mapping the taks using for</h5>
         <ul>
-            <li v-for='tsks in tasks' :key='tsks'>{{ tsks }}</li>
+            <li v-for='(tsks,index) in tasks' :key='tsks'>{{ tsks }} <span @click='deleteTask(index)' class='delete'>x</span></li>
         </ul>
     </div>
     <div>
@@ -64,5 +68,10 @@ h1 {
 button {
     margin-top: 20px;
     cursor: pointer;
+}
+.delete {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
 }
 </style>
