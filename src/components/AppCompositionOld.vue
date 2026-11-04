@@ -1,23 +1,27 @@
 <script >
 export default {
-    data(){
-        return {
-            message: "This is Vue job search for hands on vue",
-            name:'Scot',
-            status:'Inactive',
-            tasks:['Task 1','Task 2','Task 3'],
-            link:'https://www.google.com'
-        }
-    },
-    methods:{
-        toogleStatus(){
-            if(this.status.toLocaleLowerCase()==='active'){
-                this.status='Inactive'
-            }else if(this.status.toLocaleLowerCase()==='inactive'){
-                this.status='Active'
+    setup(){
+        const message = "This is Vue job search for hands on vue"
+        const name = 'Sagar'
+        const status = 'Inactive'
+        const tasks = ['Task 1','Task 2','Task 3']
+        const link = 'https://www.google.com'
+        function toogleStatus(){
+            if(status.toLocaleLowerCase()==='active'){
+                status='Inactive'
+            }else if(status.toLocaleLowerCase()==='inactive'){
+                status='Active'
             }else {  
-                this.status='Unknown'
+                status='Unknown'
             }
+        }
+        return {
+            message ,
+            name,
+            status,
+            tasks,
+            link,
+            toogleStatus
         }
     }
 }
