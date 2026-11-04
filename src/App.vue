@@ -9,6 +9,17 @@ export default {
             tasks:['Task 1','Task 2','Task 3'],
             link:'https://www.google.com'
         }
+    },
+    methods:{
+        toogleStatus(){
+            if(this.status.toLocaleLowerCase()==='active'){
+                this.status='Inactive'
+            }else if(this.status.toLocaleLowerCase()==='inactive'){
+                this.status='Active'
+            }else {  
+                this.status='Unknown'
+            }
+        }
     }
 }
 // import ListingJobs from './co§mponents/ListingJobs.vue'
@@ -33,6 +44,8 @@ export default {
     <a :href='link' target="_blank" >Click here to visit Google using new way</a>
    </div>
 
+   <button v-on:click='toogleStatus'>Toogle Status</button>
+
 
 <!-- <h1>This is Vue job search for ha nds on vue</h1> -->
 <!-- <ListingJobs/> -->
@@ -41,5 +54,9 @@ export default {
 <style scoped>
 h1{
     color:green
+}
+button{
+    margin-top: 20px;
+    cursor: pointer;
 }
 </style>
