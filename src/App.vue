@@ -6,7 +6,8 @@ export default {
             message: "This is Vue job search for hands on vue",
             name:'Scot',
             status:'Inactive',
-            tasks:['Task 1','Task 2','Task 3']
+            tasks:['Task 1','Task 2','Task 3'],
+            link:'https://www.google.com'
         }
     }
 }
@@ -26,6 +27,10 @@ export default {
             <li v-for='tsks in tasks' :key='tsks'>{{tsks}}</li>
         </ul>
     </div>
+    <a v-bind:href='link' target="_blank">Click here to visit Google old way</a>
+    <br>
+    <a :href='link' target="_blank">Click here to visit Google using new way</a>
+
 
 <!-- <h1>This is Vue job search for ha nds on vue</h1> -->
 <!-- <ListingJobs/> -->
