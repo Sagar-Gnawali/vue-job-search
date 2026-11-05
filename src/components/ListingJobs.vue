@@ -2,11 +2,16 @@
 import { ref, defineProps } from 'vue'
 import JobData from '@/jobs.json'
 import JobListingCard from '@/components/ListingJob.vue'
+import ViewAllJobs from '@/components/ViewAllJobs.vue'
 
 defineProps({
     limit: {
         type: Number,
         default: 10
+    },
+    showButton:{
+        type: Boolean, 
+        default: false
     }
 })
 
@@ -25,4 +30,5 @@ const jobs = ref(JobData)
             </div>
         </div>
     </section>
+    <ViewAllJobs :showButton="showButton"/>
 </template>
