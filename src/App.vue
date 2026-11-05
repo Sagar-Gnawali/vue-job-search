@@ -9,7 +9,7 @@ import ListingJobs from '@/components/ListingJobs.vue'
   <NavBar />
   <Hero title="Become a Software Engineer" subTitle="Practice your Vue skills and land your dream job"/>
   <HomeCards/>
-  <ListingJobs/>
+  <ListingJobs limit="5"/>
 </template>
 
 <style scoped></style>
