@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { capitalize } from './../utils/helper.js'
 const message = ref("This is Vue job search for hands on vue")
 const name = ref('Sagar')
 const status = ref('Inactive')
@@ -30,8 +31,8 @@ const deleteTask = (index) => {
 const getTasks = async () => {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/todos')
-        const data = await response.json() 
-        tasks.value = data.map(task => task.title)
+        const data = await response.json()
+        tasks.value = data.map(task => capitalize(task.title))
     }
     catch (error) {
         console.log('Error while fetching the tasks', error)
