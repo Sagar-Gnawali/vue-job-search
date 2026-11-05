@@ -1,11 +1,22 @@
 <script setup>
-import { defineProps, onMounted } from "vue";
+import { defineProps, ref, computed } from "vue";
 
 const { job } = defineProps({
   job: {
     type: Object
   }
 });
+const showFullDescription = ref(false);
+
+const truncatedDesc = computed(() => {
+  let desc = job.description;
+  if (!showFullDescription.value) {
+    return desc.substring(0, 90) + '...';
+  }
+  return desc;
+})
+
+const toggleDesc = () => showFullDescription.value = !showFullDescription.value;
 
 </script>
 
@@ -17,7 +28,13 @@ const { job } = defineProps({
         {{ job.title }}
       </div>
       <div class="mb-5">
-        {{ job.description }}
+        <div>
+          {{ truncatedDesc }}
+
+        </div>
+        <button @click='toggleDesc' class='text-green-500 hover:text-green-600 mb-5 cursor-pointer'>
+          {{ showFullDescription ? 'Show Less' : 'Show More' }}
+        </button>
       </div>
 
       <h3 class="text-green-500 mb-2">{{ job.salary }} / Year</h3>
@@ -26,8 +43,8 @@ const { job } = defineProps({
 
       <div class="flex flex-col lg:flex-row justify-between mb-4">
         <div class="text-orange-700 mb-3">
-          <!-- <i class="fa-solid fa-location-dot text-lg"></i> -->
-         {{job.location}}
+          <i class='pi pi-map-marker text-orange-600'></i>
+          {{ job.location }}
         </div>
         <a :href="`/job/${job.id}`"
           class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm">
