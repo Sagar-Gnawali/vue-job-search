@@ -29,6 +29,7 @@ const addNewJob = async (jobdata) => {
         toast.success('Job added successfully..!')
     } catch (error) {
         console.log('error')
+        toast.error('OOPS! Something went wrong, the job was not added.')
     }
 }
 

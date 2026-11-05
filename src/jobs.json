@@ -153,6 +153,62 @@
         "contactPhone": "+1 (363) 108-4726"
       },
       "id": "fA3qfs2GXtg"
+    },
+    {
+      "title": "Angela Spence",
+      "type": "Part-Time",
+      "location": "Ad voluptas est anim",
+      "description": "Esse eaque ea sunt l",
+      "salary": "$60K - $70K",
+      "company": {
+        "name": "Bullock and Greer LLC",
+        "description": "Cupidatat quia ex qu",
+        "contactEmail": "rupyjew@mailinator.com",
+        "contactPhone": "+1 (882) 845-6616"
+      },
+      "id": "EV2w8yIWgN0"
+    },
+    {
+      "title": "Signe Tate",
+      "type": "Part-Time",
+      "location": "Similique cumque par",
+      "description": "Excepturi doloribus ",
+      "salary": "$90K - $100K",
+      "company": {
+        "name": "Grimes Rogers Trading",
+        "description": "Dolore eaque nisi pl",
+        "contactEmail": "ruducy@mailinator.com",
+        "contactPhone": "+1 (917) 789-3261"
+      },
+      "id": "_7hYE4ZJBwo"
+    },
+    {
+      "title": "Cade Jenkins",
+      "type": "Full-Time",
+      "location": "Dolore ad officia fa",
+      "description": "Sint facilis unde ev",
+      "salary": "$175K - $200K",
+      "company": {
+        "name": "Duke and Hickman Trading",
+        "description": "Ad sint animi quae",
+        "contactEmail": "sibev@mailinator.com",
+        "contactPhone": "+1 (626) 796-1718"
+      },
+      "id": "vT_QI-ey_JQ"
+    },
+    {
+      "title": "Alfreda Small",
+      "type": "Internship",
+      "location": "Recusandae In ea qu",
+      "description": "Ut et illo ea facere",
+      "salary": "$70K - $80K",
+      "company": {
+        "name": "Rivera and Sparks Traders",
+        "description": "Earum ad nostrud vit",
+        "contactEmail": "lucoxi@mailinator.com",
+        "contactPhone": "+1 (395) 994-7135"
+      },
+      "id": "UdvE8kw_eqo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
