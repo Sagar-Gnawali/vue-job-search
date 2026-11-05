@@ -4,7 +4,7 @@ import logo from '@/assets/img/logo.png'
 
 const isActiveRoute = (rtName) => {
   const route = useRoute();
-  return route.name === rtName;
+  return route.fullPath === rtName;
 }
 </script>
 
@@ -21,15 +21,15 @@ const isActiveRoute = (rtName) => {
           <div class="md:ml-auto">
             <div class="flex space-x-2">
               <RouterLink to="/"
-                :class="[isActiveRoute('home') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white ', 'text-white', 'px-3', 'py-2', 'rounded-md']">
+                :class="[isActiveRoute('/') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white ', 'text-white', 'px-3', 'py-2', 'rounded-md']">
                 Home
               </RouterLink>
               <RouterLink to="/jobs"
-                :class="[isActiveRoute('jobs') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white ', 'text-white', 'px-3', 'py-2', 'rounded-md']">
+                :class="[isActiveRoute('/jobs') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white ', 'text-white', 'px-3', 'py-2', 'rounded-md']">
                 Jobs
                 </ RouterLink>
                 <RouterLink to="/jobs/add"
-                  :class="[isActiveRoute('jobs-add') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white ', 'text-white', 'px-3', 'py-2', 'rounded-md']">
+                  :class="[isActiveRoute('/jobs/add') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white ', 'text-white', 'px-3', 'py-2', 'rounded-md']">
                   Add Job</RouterLink>
             </div>
           </div>
