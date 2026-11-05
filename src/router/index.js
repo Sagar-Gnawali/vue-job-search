@@ -15,6 +15,11 @@ const router = createRouter({
       name: 'jobs',
       // component: () => import('@/views/JobsViews.vue')
       component: JobsViews
+    },
+    {
+      path: '/jobs/add',
+      name: 'jobs-add',
+      component: JobsViews
     }
   ],
 });
