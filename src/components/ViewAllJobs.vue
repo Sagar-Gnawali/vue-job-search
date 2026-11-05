@@ -1,8 +1,15 @@
 <script setup>
+import { defineProps } from "vue";
+defineProps({
+    showButton: {
+        type: Boolean,
+        default: false,
+    },
+});
 </script>
 
 <template>
-    <section class="m-auto max-w-lg my-10 px-6">
+    <section v-if="`showButton`" class="m-auto max-w-lg my-10 px-6">
       <a
         :href="'/jobs'"
         class="block bg-black text-white text-center py-4 px-6 rounded-xl cursor-pointer hover:bg-gray-800 transition-colors duration-300"

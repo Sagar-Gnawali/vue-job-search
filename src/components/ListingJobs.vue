@@ -8,6 +8,10 @@ defineProps({
     limit: {
         type: Number,
         default: 10
+    },
+    showButton:{
+        type: Boolean, 
+        default: false
     }
 })
 
@@ -26,5 +30,5 @@ const jobs = ref(JobData)
             </div>
         </div>
     </section>
-    <ViewAllJobs/>
+    <ViewAllJobs :showButton="showButton"/>
 </template>
