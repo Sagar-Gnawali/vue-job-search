@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  /* 1. ADD CUSTOM COLORS */
+  /* Creates classes like: bg-brand-primary, text-brand-dark */
+  --color-brand-primary: #ff5733;
+  --color-brand-dark: #1a1a1a;
+
+  /* 2. OVERRIDE DEFAULT COLORS */
+  /* Changes the default Tailwind blue-500 to your specific hex code */
+  --color-blue-500: #ffffff;
+
+  /* 3. ADD CUSTOM SPACING */
+  /* Creates classes like: p-18, m-18, gap-18, w-18 */
+  --spacing-18: 4.5rem;
+  --spacing-100: 25rem;
+
+  /* 4. ADD CUSTOM BORDER RADII */
+  /* Creates classes like: rounded-button */
+  --radius-button: 8px;
+
+  /* 5. ADD CUSTOM BREAKPOINTS */
+  /* Creates responsive prefixes like: 3xl:flex */
+  --breakpoint-3xl: 1920px;
+}
