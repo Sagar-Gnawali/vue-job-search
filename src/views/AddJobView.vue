@@ -1,4 +1,5 @@
 <script setup>
+import { parseForm } from '@/utils/helper'
 import { reactive } from 'vue'
 
 const form = reactive({
@@ -16,7 +17,21 @@ const form = reactive({
 })
 
 const handleSubmit = async ()=>{
-    console.log('form data is >>>>>>>>>>',parseForm)
+    console.log('form data is >>>>>>>>>>',parseForm(form))
+    const newJob = {
+        title:form.title,
+        type:form.type,
+        location:form.location,
+        description:form.description,
+        salary:form.salary,
+        company:{
+            name: form.company.name,
+            description: form.company.description,
+            contactEmail: form.company.contactEmail,
+            contactPhone: form.company.contactPhone
+        }
+    }
+    console.log('new job data >>>', newJob)
     
 }
 </script>
@@ -68,7 +83,7 @@ const handleSubmit = async ()=>{
                         <label class="block text-gray-700 font-bold mb-2">
                             Location
                         </label>
-                        <input v-model='form.company.location' type="text" id="location" name="location" class="border rounded w-full py-2 px-3 mb-2"
+                        <input v-model='form.location' type="text" id="location" name="location" class="border rounded w-full py-2 px-3 mb-2"
                             placeholder="Company Location" required />
                     </div>
 
