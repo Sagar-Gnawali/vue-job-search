@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import JobData from '@/jobs.json'
-
+import JobListingCard from '@/components/ListingJob.vue'
 const jobs = ref(JobData)
 
 
@@ -12,7 +12,8 @@ const jobs = ref(JobData)
         <div class='container-xl lg:container m-auto'>
             <h4 class='text-3xl font-bold text-green-500 mb-6 text-center'>Browse Jobs</h4>
             <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                <p v-for='jbs in jobs' :key='jbs.id'>{{ jbs.title }}</p>
+                <!-- <p v-for='jbs in jobs' :key='jbs.id'>{{ jbs.title }}</p> -->
+                <JobListingCard v-for='jbs in jobs' :key='jbs.id' :job='jbs'/>
             </div>
         </div>
     </section>
