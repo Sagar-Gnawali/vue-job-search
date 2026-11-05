@@ -2,6 +2,7 @@
 import { ref, defineProps } from 'vue'
 import JobData from '@/jobs.json'
 import JobListingCard from '@/components/ListingJob.vue'
+import ViewAllJobs from '@/components/ViewAllJobs.vue'
 
 defineProps({
     limit: {
@@ -25,4 +26,5 @@ const jobs = ref(JobData)
             </div>
         </div>
     </section>
+    <ViewAllJobs/>
 </template>
