@@ -10,13 +10,18 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
-    }, {
-      path: '/jobs',
-      name: 'jobs',
-      // component: () => import('@/views/JobsViews.vue')
-      component: JobsViews
-    }
+    },
+    {
+      path: "/jobs",
+      name: "jobs",
+      component: JobsViews,
+    },
+    // {
+    //   path: "/jobs/add",
+    //   name: "jobs-add",
+    //   component: JobsViews,
+    // },
   ],
 });
 
-export default router
+export default router;
