@@ -17,7 +17,7 @@ const state = reactive({
 })
 const getJobById = async (id) => {
   try {
-    const res = await axios.get(`http://localhost:8080/jobs/${id}`)
+    const res = await axios.get(`/api/jobs/${id}`)
     state.job = res.data
   } catch (error) {
     console.log('error', error)
