@@ -6,7 +6,8 @@ import Hero from '@/components/Hero.vue'
 
 <template>
   <NavBar />
-  <Hero/>
+  <!-- <Hero/> -->
+  <Hero title="Become a Software Engineer" subTitle="Practice your Vue skills and land your dream job"/>
 <!-- <ListingJobs/> -->
 </template>
 
