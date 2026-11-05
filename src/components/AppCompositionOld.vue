@@ -1,15 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 const message = ref("This is Vue job search for hands on vue")
 const name = ref('Sagar')
 const status = ref('Inactive')
-const tasks = ref(['Task 1', 'Task 2', 'Task 3'])
+const tasks = ref([])
 const link = ref('https://www.google.com')
 
 const newTask = ref('')
 
 function toogleStatus(e) {
-    console.log('e', status)
     if (status.value.toLocaleLowerCase() === 'active') {
         status.value = 'Inactive'
     } else if (status.value.toLocaleLowerCase() === 'inactive') {
@@ -28,6 +27,19 @@ const addTask = () => {
 const deleteTask = (index) => {
     tasks.value.splice(index, 1)
 }
+const getTasks = async () => {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+        const data = await response.json() 
+        tasks.value = data.map(task => task.title)
+    }
+    catch (error) {
+        console.log('Error while fetching the tasks', error)
+    }
+}
+onMounted(() => {
+    getTasks()
+})
 </script>
 
 <template>
@@ -40,7 +52,8 @@ const deleteTask = (index) => {
     <div>
         <h5>Mapping the taks using for</h5>
         <ul>
-            <li v-for='(tsks,index) in tasks' :key='tsks'>{{ tsks }} <span @click='deleteTask(index)' class='delete'>x</span></li>
+            <li v-for='(tsks, index) in tasks' :key='tsks'>{{ tsks }} <span @click='deleteTask(index)'
+                    class='delete'>x</span></li>
         </ul>
     </div>
     <div>
@@ -50,7 +63,7 @@ const deleteTask = (index) => {
     </div>
 
     <button v-on:click='toogleStatus'>Toogle Status</button>
-<!-- For adding new taks using v-bind or binding  -->
+    <!-- For adding new taks using v-bind or binding  -->
     <div>
         <form @submit.prevent='addTask'>
             <label for="new Task">Add New Task</label>
@@ -68,7 +81,9 @@ h1 {
 button {
     margin-top: 20px;
     cursor: pointer;
+    margin-left: 10px;
 }
+
 .delete {
     color: red;
     cursor: pointer;
