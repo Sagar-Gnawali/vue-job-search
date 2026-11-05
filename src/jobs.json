@@ -181,6 +181,20 @@
         "contactPhone": "+1 (395) 994-7135"
       },
       "id": "UdvE8kw_eqo"
+    },
+    {
+      "title": "Sloane Shaffer",
+      "type": "Full-Time",
+      "location": "Non voluptatem neces",
+      "description": "Aliquam enim sunt ut",
+      "salary": "$100K - $125K",
+      "company": {
+        "name": "Richmond Elliott LLC",
+        "description": "This is updated one",
+        "contactEmail": "selu@mailinator.com",
+        "contactPhone": "+1 (649) 463-4108"
+      },
+      "id": "jknIWdY-Yig"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
