@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, onMounted } from 'vue'
+import { ref, defineProps, onMounted , reactive} from 'vue'
 
 import axios from 'axios'
 
@@ -16,15 +16,19 @@ defineProps({
         default: false
     }
 })
-
-const jobs = ref([])
+const state = reactive({
+    jobs:[],
+    isLoading: true
+})
 
 const getJobLists = async () => {
     try {
         const res = await axios.get('http://localhost:8080/jobs')
-        jobs.value = res.data
+        state.jobs = res.data
     } catch (error) {
         console.log(error)
+    }finally{
+        state.isLoading = false
     }
 }
 
@@ -39,7 +43,7 @@ onMounted(() => {
             <h4 class='text-3xl font-bold text-green-500 mb-6 text-center'>Browse Jobs</h4>
             <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
                 <!-- <p v-for='jbs in jobs' :key='jbs.id'>{{ jbs.title }}</p> -->
-                <JobListingCard v-for='jbs in jobs.slice(0, limit || jobs.length)' :key='jbs.id' :job='jbs' />
+                <JobListingCard v-for='jbs in state.jobs.slice(0, limit || state.jobs.length)' :key='state.jbs?.id' :job='jbs' />
             </div>
         </div>
     </section>
